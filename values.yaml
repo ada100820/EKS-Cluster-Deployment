@@ -1,0 +1,29 @@
+# --------------------------------------------------------------------------------
+# Replica Count
+# --------------------------------------------------------------------------------
+replicaCount: 1
+
+# --------------------------------------------------------------------------------
+# Persistence
+# --------------------------------------------------------------------------------
+persistence:
+  enabled: true
+  size: 50Gi
+  storageClass: gp3    # If using the custom gp3 SC above. Or "gp2", or "" for default.
+
+# --------------------------------------------------------------------------------
+# Liveness & Readiness Probes
+# --------------------------------------------------------------------------------
+livenessProbe:
+  enabled: true
+  initialDelaySeconds: 900   # Weaviate can take time to init
+readinessProbe:
+  enabled: true
+
+# --------------------------------------------------------------------------------
+# Security Context (to run as non-root, if desired)
+# --------------------------------------------------------------------------------
+containerSecurityContext:
+  enabled: false
+  # runAsUser: 1000
+  # runAsGroup: 1000
