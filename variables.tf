@@ -20,7 +20,7 @@ variable "private_subnet_cidrs" {
 
 variable "cluster_name" {
   type    = string
-  default = "test-cluster"
+  default = "weaviate-cluster"
 }
 
 variable "cluster_version" {
